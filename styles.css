@@ -1,0 +1,267 @@
+:root {
+  --n: #102a43;
+  --o: #f97316;
+  --b: #8ed8ff;
+  --bg: #f3faff;
+  --m: #486581;
+  --l: #d7eaf5;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--n);
+}
+header {
+  background: var(--n);
+  color: #fff;
+  padding: 13px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.brand h1 {
+  margin: 0;
+}
+.brand small {
+  color: var(--b);
+}
+.ball {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: var(--o);
+  border: 3px solid var(--b);
+  position: relative;
+  overflow: hidden;
+}
+.ball:before {
+  content: "";
+  position: absolute;
+  width: 7px;
+  height: 65px;
+  background: #fff;
+  left: 16px;
+  top: -10px;
+  transform: rotate(28deg);
+}
+.ball:after {
+  content: "";
+  position: absolute;
+  width: 65px;
+  height: 7px;
+  background: #fff;
+  left: -10px;
+  top: 17px;
+  transform: rotate(-28deg);
+}
+button {
+  cursor: pointer;
+  font-weight: 700;
+  border: 0;
+  border-radius: 9px;
+  padding: 9px 12px;
+}
+.primary {
+  background: var(--o);
+  color: #fff;
+}
+.nav {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.nav button {
+  background: #244665;
+  color: #fff;
+}
+.hero {
+  text-align: center;
+  padding: 45px 5%;
+  background: linear-gradient(135deg, #fff, #dff5ff);
+}
+.hero h2 {
+  font-size: clamp(38px, 7vw, 70px);
+  margin: 0;
+  font-weight: 900;
+}
+.hero span {
+  color: var(--o);
+}
+.hero p,
+.muted {
+  color: var(--m);
+}
+.wrap {
+  max-width: 1150px;
+  margin: auto;
+  padding: 25px 5%;
+}
+.tabs,
+.toolbar,
+.actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.toolbar button,
+.actions button {
+  border: 1px solid #c9dfeb;
+  background: #fff;
+}
+.tabs button {
+  background: #d9f2ff;
+}
+.tabs .active,
+.toolbar .active {
+  background: var(--o);
+  color: #fff;
+}
+.panel,
+.card {
+  background: #fff;
+  border: 1px solid var(--l);
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 5px 18px #102a4312;
+}
+.panel {
+  margin: 18px 0;
+}
+.search {
+  padding: 10px;
+  border: 1px solid #c9dfeb;
+  border-radius: 9px;
+  font: inherit;
+  width: min(330px, 100%);
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 17px;
+}
+.card {
+  position: relative;
+}
+.tag {
+  display: inline-block;
+  background: var(--b);
+  border-radius: 99px;
+  padding: 5px 9px;
+  font-size: 12px;
+}
+.fav {
+  position: absolute;
+  right: 13px;
+  top: 13px;
+  background: none;
+  font-size: 22px;
+}
+.card p {
+  color: var(--m);
+  min-height: 42px;
+}
+.actions .start {
+  background: var(--n);
+  color: #fff;
+}
+.timer {
+  margin-top: 10px;
+  color: var(--o);
+  font-weight: 800;
+}
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+  gap: 10px;
+}
+.stat {
+  background: #f3faff;
+  border-radius: 12px;
+  padding: 14px;
+}
+.stat b {
+  display: block;
+  color: var(--o);
+  font-size: 25px;
+}
+.bar {
+  height: 10px;
+  background: #d9eaf3;
+  border-radius: 99px;
+  overflow: hidden;
+}
+.bar i {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: var(--o);
+}
+.challenge {
+  background: var(--n);
+  color: #fff;
+}
+.item {
+  padding: 11px;
+  border: 1px solid var(--l);
+  border-radius: 10px;
+  margin: 8px 0;
+}
+.hidden {
+  display: none;
+}
+footer {
+  text-align: center;
+  padding: 30px;
+  color: var(--m);
+}
+.formgrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+}
+.formgrid input,
+.formgrid select {
+  padding: 10px;
+  border: 1px solid #c9dfeb;
+  border-radius: 9px;
+  font: inherit;
+  width: 100%;
+}
+.adminbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+@media (max-width: 650px) {
+  header {
+    align-items: flex-start;
+  }
+  .brand small {
+    display: none;
+  }
+}
+.field-block {
+  display: block;
+  width: 100%;
+  margin: 8px 0;
+}
+.field-description {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+}
